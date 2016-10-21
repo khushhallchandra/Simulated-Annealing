@@ -38,10 +38,17 @@ def updateTemp(T):
 def annealing(positions,T):
 	# No. of interation at each temperature
 	# No. of temperature points to try
-	while(T>0):
-		
+    while (T > threshold):        
+		nextOrder = nextArrangement(currentOrder);
+            deltaDistance = GetTotalDistance(nextOrder) - distance;
+                if ():
+                    for i in range(len(nextOrder):
+                        currentOrder[i] = nextOrder[i];
 
-		
+                    distance = deltaDistance + distance;
+                temperature *= coolingRate;
+
+                iteration++;
 
 # This function finds the cost of any state S'
 def cost():
