@@ -1,6 +1,6 @@
 # EE-677 VLSI CAD Course Project
-####  VLSI placement usning Simulated Annealing minimizing the wirelength
-#### PseudoCode:
+## VLSI placement usning Simulated Annealing minimizing the wirelength
+## PseudoCode:
 ```python
 function annealing():
     Temperature = INFINITE
@@ -40,6 +40,6 @@ function findNeighbourState(grid):
 	return tempGrid
 ```	
 
-#### Group Members:
-##### Khushhall Chandra Mahajan
-##### Charvi Rastogi
+## Group Members:
+### Khushhall Chandra Mahajan
+### Charvi Rastogi
