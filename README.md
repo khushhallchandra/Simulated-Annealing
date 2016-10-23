@@ -1,10 +1,14 @@
 # EE-677 VLSI CAD Course Project
-## VLSI placement usning Simulated Annealing minimizing the wirelength
+## 2-d placement usning Simulated Annealing,  minimizing the wirelength
+## Objective
+We want to place k circuit elements on a board. Circuits are connected with each
+other. Longer wirelength introduce delays in the system. Hence, we want to place
+the elements such that total wire used for interconnection is minimum.
 ## PseudoCode:
 ```python
 function annealing():
     Temperature = INFINITE
-    # generate random configuration
+    # Generate random configuration
 	grid = initialize()
 	minCost = cost(grid)
 	while(Temperature > threshold):
@@ -26,8 +30,8 @@ function annealing():
 ```python
 function findNeighbourState(grid):
 	# We will follow these two protocols, each 50% of time
-	# 1. swap positions of any two elements
-	# 2. Move any element to an empty position in the grid
+	# 1. Swap positions of any two elements
+	# 2. Move any element to an empty position on the grid
 	tempGrid = copy(grid)
 	if(random(0,1)<0.5):
 		element1 = select any element
