@@ -1,5 +1,5 @@
 # EE-677 VLSI CAD Course Project
-## 2-d placement usning Simulated Annealing,  minimizing the wirelength
+## 2-d placement using Simulated Annealing,  minimizing the wirelength
 ## Objective
 We want to place k circuit elements on a board. Circuits are connected with each
 other. Longer wirelength introduce delays in the system. Hence, we want to place
