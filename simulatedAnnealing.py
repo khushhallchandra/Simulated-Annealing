@@ -20,7 +20,7 @@ def initialize(k, N, grid):
 				assigned = True
 	return grid
 
-# Suppose you are any state say S, then you can go to 
+# Suppose you are any state say S, then you can go to
 # some other state S'
 def findNeighbourState(N, k, grid):
 	# We will follow these two protocols, each 50% of time
@@ -44,12 +44,12 @@ def findNeighbourState(N, k, grid):
 		temp = zip(*np.where(tempGrid == 0))
 		(x2,y2) = temp[np.random.randint(len(temp))]
 		tempGrid[x1, y1] = 0
-		tempGrid[x2, y2] = element1		
+		tempGrid[x2, y2] = element1
 
 	return tempGrid
 
 
-# This will return the updated temperature 
+# This will return the updated temperature
 # according to some annealing schedule
 def updateTemp(T):
 	return alpha*T
@@ -69,19 +69,22 @@ def cost(k, grid, connections):
 
 def annealing(N, k, grid, connections):
 	T = INF
+	storeCost = []
 	# We initialize the grid
 	grid = initialize(k, N, grid)
 	minCost = cost(k, grid, connections)
+	storeCost.append(minCost)
 
 	print "Initial Cost",minCost
 	print "Initial Grid"
-	print grid	
+	print grid
 
 	# No. of interation at each temperature
 	# No. of temperature points to try
 	while(T > threshold):
 		tempGrid = findNeighbourState(N, k, grid)
 		tempCost = cost(k, tempGrid, connections)
+		storeCost.append(tempCost)
 		delta = tempCost - minCost
 		if (delta<0):
 			grid = tempGrid
@@ -93,7 +96,7 @@ def annealing(N, k, grid, connections):
 				minCost = tempCost
 		T = updateTemp(T)
 
-	return grid,minCost
+	return grid, minCost, storeCost
 
 def main():
 
@@ -120,9 +123,10 @@ def main():
 	# connections[3,1] = 1
 	# connections[3,2] = 1
 
-	finalGrid,cost = annealing(N, k, grid, connections)
+	finalGrid, cost, storeCost = annealing(N, k, grid, connections)
 	print "Final Cost", cost
 	print "Final Grid"
 	print finalGrid
 
-main()
+if __name__ == "__main__":
+    main()
