@@ -6,7 +6,5 @@ python:
 install:                                                                                                                                                                                                                            
   - pip install numpy                                                                                                                                                                                                               
   - pip install matplotlib
-  - pip install random
-  - pip install time  
 script:
   - "python simulatedAnnealingFinal.py"
