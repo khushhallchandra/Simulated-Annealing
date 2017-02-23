@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/khushhallchandra/Simulated-Annealing.svg?branch=master)](https://travis-ci.org/khushhallchandra/Simulated-Annealing)
+
 # EE-677 VLSI CAD Course Project
 ## 2-d placement using Simulated Annealing,  minimizing the wirelength
 ## Objective
