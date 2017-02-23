@@ -3,5 +3,11 @@ python:
   - "2.7"
   - "3.3"
   - "3.4"
+install:                                                                                                                                                                                                                            
+  - pip install numpy                                                                                                                                                                                                               
+  - pip install math
+  - pip install matplotlib
+  - pip install random
+  - pip install time  
 script:
   - "python simulatedAnnealingFinal.py"
